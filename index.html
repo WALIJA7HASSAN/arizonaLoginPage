@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arizona Bank & Trust, a division of HTLF Bank</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="main-bg">
+    <div class="form-container">
+      <div class="logo-header">
+        <img src="./assets/logo.png" alt="logo">
+      </div>
+      <div class="login-form">
+        <form >
+          <fieldset>
+            <label for="username">Login ID</label>
+          <input type="text" name="username" id="username"  required>
+          </fieldset>
+          <fieldset>
+            <label for="password">Password</label>
+          <input type="password" name="password" id="password"  required>
+          </fieldset>
+          <div class="form-check">
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <button class="login-btn " disabled type="submit">Log In</button>
+          <a class="forget-link" href="#">Forgot your password?</a>
+        </form>
+      </div>
+      <div class="form-footer">
+        <ul >
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">Enroll</a></li>
+          <li><a href="#">Unlock Login</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-link">
+      <a href="#"><img src="./assets/footer-img.png" alt="footer link"></a>
+    </div>
+  </main>
+
+  <script>
+    // Select the input fields and login button
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginBtn = document.querySelector('.login-btn');
+
+    // Function to toggle the login button's active state
+    function toggleLoginBtn() {
+      // Check if both fields have values
+      if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+        loginBtn.disabled = false;  // Enable the button
+        loginBtn.classList.add('login-btn-active'); // Add active class
+      } else {
+        loginBtn.disabled = true; // Disable the button
+        loginBtn.classList.remove('login-btn-active'); // Remove active class
+      }
+    }
+
+    // Event listeners for the input fields
+    usernameInput.addEventListener('input', toggleLoginBtn);
+    passwordInput.addEventListener('input', toggleLoginBtn);
+  </script>
+
+</body>
+</html>
